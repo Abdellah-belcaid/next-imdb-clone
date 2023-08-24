@@ -28,7 +28,7 @@ export default async function Home({ searchParams }) {
   const results = data.results;
 
   return (
-    <div className="">
+    <div className="flex">
       <Results results={results} />
     </div>
   );
