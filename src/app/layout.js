@@ -3,6 +3,8 @@ import NavBar from "@/component/NavBar";
 import { Inter } from "next/font/google";
 import Providers from "./Providers";
 import "./globals.css";
+import SearchBox from "@/component/SearchBox";
+import Footer from "@/component/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +20,10 @@ export default function RootLayout({ children }) {
         <Providers>
           <Header />
           <NavBar />
+          <SearchBox />
           {children}
+          <div id="bottom-trigger"></div> {/* Trigger for the footer */}
+          <Footer />
         </Providers>
       </body>
     </html>
