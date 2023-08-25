@@ -2,28 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-html::-webkit-scrollbar{
-    display: none;
+html::-webkit-scrollbar {
+  display: none;
 }
 
-html{
-    scrollbar-width: none;
+html {
+  scrollbar-width: none;
 }
 
-
-
+/* styles for footer*/
 @keyframes slideUp {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
 
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .animate-slide-up {
-    animation: slideUp 0.5s ease-in-out;
+  animation: slideUp 0.5s ease-in-out;
+}
+
+/* styles for pagination*/
+.fade-enter {
+  opacity: 0.01;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }

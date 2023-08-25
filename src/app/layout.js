@@ -1,10 +1,10 @@
+import Footer from "@/component/Footer";
 import Header from "@/component/Header";
 import NavBar from "@/component/NavBar";
+import SearchBox from "@/component/SearchBox";
 import { Inter } from "next/font/google";
 import Providers from "./Providers";
 import "./globals.css";
-import SearchBox from "@/component/SearchBox";
-import Footer from "@/component/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 

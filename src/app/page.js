@@ -1,35 +1,25 @@
+import Pagination from "@/component/Pagination";
 import Results from "@/component/Results";
+import { getMoviesByType } from "@/services/TmdbMoviesAPI";
 
-const API_KEY = process.env.API_KEY;
 const DEFAULT_GENRE = "fetchTrending";
-
-async function fetchData(searchParams) {
-  try {
-    const genre = searchParams.genre || DEFAULT_GENRE;
-    const response = await fetch(
-      `https://api.themoviedb.org/3/${
-        genre === "fetchTopRated" ? "movie/top_rated" : "trending/all/week"
-      }?api_key=${API_KEY}&language=en-US&page=1`
-    );
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const jsonData = await response.json();
-    return jsonData;
-  } catch (error) {
-    throw error;
-  }
-}
+const RESULTS_PER_PAGE = 20; // Adjust as needed
 
 export default async function Home({ searchParams }) {
-  const data = await fetchData(searchParams);
+  const genre = searchParams.genre || DEFAULT_GENRE;
+  const data = await getMoviesByType(genre, searchParams.page);
   const results = data.results;
+  const total_results = data.total_results;
+  const totalPages = Math.ceil(total_results / RESULTS_PER_PAGE);
 
   return (
-    <div className="flex">
+    <div className="">
       <Results results={results} />
+      <Pagination
+        currentPage={searchParams.page}
+        totalPages={totalPages}
+        genre={searchParams.genre}
+      />
     </div>
   );
 }

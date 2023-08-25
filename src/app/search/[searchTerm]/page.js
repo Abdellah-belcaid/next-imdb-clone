@@ -1,25 +1,9 @@
 import Results from "@/component/Results";
-
-async function getSearchItems(searchTerm) {
-  try {
-    const response = await fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${searchTerm}&language=en-US`
-    );
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const jsonData = await response.json();
-    const movies = jsonData.results;
-    return movies;
-  } catch (error) {
-    throw error;
-  }
-}
+import { searchMovies } from "@/services/TmdbMoviesAPI";
 
 async function SearchPage({ params }) {
-  const movies = await getSearchItems(params.searchTerm);
+  const res = await searchMovies(params.searchTerm, 1);
+  const movies = res.results;
 
   return (
     <div>

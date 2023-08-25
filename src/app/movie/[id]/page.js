@@ -1,24 +1,8 @@
+import { getMovieDetails } from "@/services/TmdbMoviesAPI";
 import Image from "next/image";
-
-async function getMovieData(movieId) {
-  try {
-    const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}&language=en-US`
-    );
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const jsonData = await response.json();
-    return jsonData;
-  } catch (error) {
-    throw error;
-  }
-}
-
+  
 async function Movie({ params }) {
-  const movie = await getMovieData(params.id);
+  const movie = await getMovieDetails(params.id);
 
   return (
     <div className="w-full ">
