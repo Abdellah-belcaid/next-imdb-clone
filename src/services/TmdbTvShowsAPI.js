@@ -27,7 +27,7 @@ export async function getShowsByType(type, page = 1) {
   }
 }
 
-export async function getShowDetails(showId) {
+export async function getTvShowDetails(showId) {
   const endpoint = `https://api.themoviedb.org/3/tv/${showId}?api_key=${API_KEY}&language=en-US`;
   return fetchData(endpoint);
 }

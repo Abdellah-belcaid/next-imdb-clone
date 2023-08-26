@@ -10,7 +10,7 @@ function NavbarItem({ title, param }) {
   return (
     <div className="">
       <Link
-        className={`m-4 hover:text-amber-600 font-semibold p-2 ${
+        className={`m-4 hover:text-amber-600 font-semibold p-2 sm:text-sm text-justify items-center ${
           genre &&
           genre === param &&
           "underline underline-offset-8 decoration-4 decoration-amber-500 rounded-lg "
