@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 function NavbarItem({ title, param }) {
   const searchParams = useSearchParams();
   const genre = searchParams.get("genre");
+  const pathname = usePathname();
+  const firstSegment = pathname.split("/")[1];
 
   return (
     <div className="">
@@ -13,7 +15,7 @@ function NavbarItem({ title, param }) {
           genre === param &&
           "underline underline-offset-8 decoration-4 decoration-amber-500 rounded-lg "
         }`}
-        href={`/?genre=${param}&page=1`}
+        href={`/${firstSegment}?genre=${param}&page=1`}
       >
         {title}
       </Link>

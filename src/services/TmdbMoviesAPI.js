@@ -20,6 +20,8 @@ export async function getMoviesByType(type, page = 1) {
     return getTrendingMovies(page);
   } else if (type === "fetchTopRated") {
     return getTopRatedMovies(page);
+  } else if (type === "fetchNowPlaying") {
+    return getNowPlayingMovies(page);
   } else {
     throw new Error("Invalid movie type");
   }
@@ -37,6 +39,11 @@ async function getTrendingMovies(page = 1) {
 
 async function getTopRatedMovies(page = 1) {
   const endpoint = `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=${page}`;
+  return fetchData(endpoint);
+}
+
+async function getNowPlayingMovies(page = 1) {
+  const endpoint = `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.API_KEY}&language=en-US&page=${page}`;
   return fetchData(endpoint);
 }
 

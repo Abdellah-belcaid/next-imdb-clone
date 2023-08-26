@@ -1,6 +1,7 @@
 import { getMovieDetails } from "@/services/TmdbMoviesAPI";
 import Image from "next/image";
-  
+import { AiOutlineStar } from "react-icons/ai";
+
 async function Movie({ params }) {
   const movie = await getMovieDetails(params.id);
 
@@ -34,9 +35,14 @@ async function Movie({ params }) {
             <span className="font-semibold mr-1">Date Released :</span>{" "}
             {movie.release_date || movie.first_air_date}
           </p>
-          <p className="mb-3">
-            <span className="font-semibold mr-1">Rating :</span>{" "}
+          <p className="mb-3 flex">
+            <span className="font-semibold mr-1">Votes :</span>{" "}
             {movie.vote_count}
+          </p>
+          <p className="mb-3 flex items-center ">
+            <span className="font-semibold mr-1">Rating :</span>{" "}
+            {movie.vote_average}{" "}
+            <AiOutlineStar className="ml-3 text-amber-700 font-bold" />
           </p>
         </div>
       </div>

@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-function Pagination({ currentPage, totalPages, genre }) {
+function Pagination({ currentPage, totalPages, path }) {
   const page = parseInt(currentPage, 10);
 
   return (
-    <div className="flex justify-center items-center space-x-4 mt-6 mb-20">
+    <div className="flex justify-center items-center space-x-4 mt-4 mb-20">
       {currentPage > 1 ? (
-        <Link href={`/?genre=${genre}&page=${page - 1}`}>
+        <Link href={`${path}${page - 1}`}>
           <span className="px-3 py-2 rounded-md bg-blue-500 text-white">
             Previous
           </span>
@@ -20,7 +20,7 @@ function Pagination({ currentPage, totalPages, genre }) {
         Page {currentPage} of {totalPages}
       </span>
       {currentPage < totalPages ? (
-        <Link href={`/?genre=${genre}&page=${page + 1}`}>
+        <Link href={`${path}${page + 1}`}>
           <span className="px-3 py-2 rounded-md bg-blue-500 text-white">
             Next
           </span>
