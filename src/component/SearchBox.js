@@ -34,7 +34,7 @@ function SearchBox() {
         <select
           value={type}
           onChange={(e) => setType(e.target.value)}
-          className="h-8 py-2 rounded-md bg-transparent text-gray-700 focus:outline-none focus:border-amber-400 dark:text-white"
+          className="h-12  rounded-md bg-transparent text-gray-700 focus:outline-none focus:border-amber-400 dark:text-white"
           aria-label="Search type"
         >
           <option value="movies">Movies</option>

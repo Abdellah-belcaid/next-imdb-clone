@@ -4,7 +4,7 @@ import { BiFilm, BiTimeFive } from "react-icons/bi";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { RiTvFill } from "react-icons/ri";
 
-const MediaDetails = ({ media }) => {
+function Overview({ media }) {
   const {
     title,
     name,
@@ -19,28 +19,30 @@ const MediaDetails = ({ media }) => {
     poster_path,
     number_of_episodes,
     number_of_seasons,
+    genres,
   } = media;
-  
+
   return (
-    <div className="w-full ">
-      <div className="p-4 md:pt-8 flex flex-col md:flex-row items-center content-center max-w-6xl mx-auto md:space-x-6 ">
+    <div
+      className="min-w-fit ml-2 mr-2 rounded-lg bg-transparent "
+      style={{
+        background: `url(https://image.tmdb.org/t/p/original/${poster_path}) center/cover`,
+      }}
+    >
+      <div className="text-white  p-6  md:pt-8 flex flex-col md:flex-row items-center content-center  mx-auto md:space-x-6 ">
         <Image
           src={`https://image.tmdb.org/t/p/original/${
             backdrop_path || poster_path
           }`}
           width={500}
-          height={300}
-          style={{
-            maxWidth: "100%",
-            height: "100%",
-          }}
+          height={600}
           alt="image is not available"
-          className=" rounded-lg"
+          className=" rounded-lg  "
           placeholder="blur"
           blurDataURL="/icon.ico"
-        ></Image>
+        />
         <div className="p-2 ">
-          <h2 className="text-lg mb-3 font-bold">{title || name}</h2>
+          <h2 className="text-3xl mb-3 font-extrabold">{title || name}</h2>
           <p className="text-lg mb-3">
             <span className="font-semibold mr-1">overview : </span>
             {overview}
@@ -82,10 +84,21 @@ const MediaDetails = ({ media }) => {
               </p>
             )}
           </div>
+          <div className="flex space-x-2">
+            {genres &&
+              genres.map((genre) => (
+                <span
+                  key={genre.id}
+                  className="bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300 hover:text-red-500"
+                >
+                  {genre.name}
+                </span>
+              ))}
+          </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
-export default MediaDetails;
+export default Overview;

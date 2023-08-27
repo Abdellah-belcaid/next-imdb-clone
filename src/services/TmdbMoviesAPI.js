@@ -51,3 +51,8 @@ export async function searchMovies(query, page = 1) {
   const endpoint = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&query=${query}&page=${page}`;
   return fetchData(endpoint);
 }
+
+export async function getReviews(mediaType, mediaId) {
+  const endpoint = `https://api.themoviedb.org/3/${mediaType}/${mediaId}/reviews?api_key=${API_KEY}&language=en-US`;
+  return fetchData(endpoint);
+}

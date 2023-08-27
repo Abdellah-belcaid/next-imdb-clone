@@ -1,5 +1,5 @@
 import Pagination from "@/component/Pagination";
-import Results from "@/component/Results";
+import Results from "@/component/media/Results";
 import { getShowsByType } from "@/services/TmdbTvShowsAPI";
 
 const DEFAULT_GENRE = "fetchTrending"; // Adjust as needed

@@ -1,5 +1,5 @@
 import Pagination from "@/component/Pagination";
-import Results from "@/component/Results";
+import Results from "@/component/media/Results";
 import { searchMovies } from "@/services/TmdbMoviesAPI";
 import { searchShows } from "@/services/TmdbTvShowsAPI";
 

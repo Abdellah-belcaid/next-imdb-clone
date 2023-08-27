@@ -14,7 +14,7 @@ const Card = ({ result, type = "/movies/movie" }) => {
     release_date,
     first_air_date,
     vote_count,
-    vote_average,
+    vote_average,    
   } = result;
 
   return (
@@ -44,6 +44,7 @@ const Card = ({ result, type = "/movies/movie" }) => {
           {Number(vote_average).toFixed(1)}
         </p>
       </div>
+      
     </div>
   );
 };
