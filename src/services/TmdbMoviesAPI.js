@@ -63,6 +63,6 @@ export async function getMainActors(mediaType, mediaId) {
   const response = await fetchData(endpoint);
 
   // Filter cast members to get only main actors (e.g., actors with prominent roles)
-  const mainActors = response.cast.filter((actor) => actor.order < 10); // You can adjust the order as needed
+  const mainActors = response.cast.filter((actor) => actor.order < 20); // You can adjust the order as needed
   return mainActors;
 }

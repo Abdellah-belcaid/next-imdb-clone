@@ -2,13 +2,13 @@ import ActorCard from "./ActorCard";
 
 function Credits({ actors }) {
   return (
-    <div className="">
-      <h2 className="text-3xl font-semibold inline-block border-b-2 border-blue-500 ml-6 mt-4">
-        Main Actors
-      </h2>
-      <div className="sm:grid sm:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-10 max-w-full mx-auto py-4 px-2">
+    <div className="px-6 py-4">
+      <h2 className="text-3xl font-semibold mb-4">Main Actors</h2>
+      <div className="relative z-0 grid  auto-cols-[15rem] grid-flow-col gap-1 overflow-x-auto pt-2  overscroll-x-contain  no-scrollbar">
         {actors.map((actor) => (
-          <ActorCard key={actor.id} actor={actor} />
+          <div key={actor.id} className="  ">
+            <ActorCard actor={actor} />
+          </div>
         ))}
       </div>
     </div>
