@@ -1,19 +1,6 @@
+import { fetchData } from "./TmdbAPIUtils";
+
 const API_KEY = process.env.API_KEY;
-
-async function fetchData(endpoint) {
-  try {
-    const response = await fetch(endpoint);
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const jsonData = await response.json();
-    return jsonData;
-  } catch (error) {
-    throw error;
-  }
-}
 
 export async function getShowsByType(type, page = 1) {
   if (type === "fetchTrending") {
@@ -44,10 +31,5 @@ async function getTopRatedShows(page = 1) {
 
 async function getAiringTodayShows(page = 1) {
   const endpoint = `https://api.themoviedb.org/3/tv/airing_today?api_key=${API_KEY}&language=en-US&page=${page}`;
-  return fetchData(endpoint);
-}
-
-export async function searchShows(query, page = 1) {
-  const endpoint = `https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}`;
   return fetchData(endpoint);
 }

@@ -12,11 +12,11 @@ async function Movies({ searchParams: { genre, page } }) {
 
   const { results, total_results } = data;
   const totalPages = Math.ceil(total_results / RESULTS_PER_PAGE);
-  const path = `/movies?genre=${genreParam}&page=`;
+  const path = `/movie?genre=${genreParam}&page=`;
 
   return (
     <div className="">
-      <Results results={results} type={"/movies/movie"} />
+      <Results results={results} type={"movie"} />
       <Pagination currentPage={page} totalPages={totalPages} path={path} />
     </div>
   );

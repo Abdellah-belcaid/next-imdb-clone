@@ -8,7 +8,7 @@ function NavBar() {
 
   return (
     <>
-      {(segment === "movies" || segment === "tvShows" || segment === "") && (
+      {(segment === "tv" || segment === "movie" || segment === "") && (
         <div className="flex justify-center dark:bg-gray-600 bg-gray-300 lg:text-2lg p-4  ">
           <NavbarItem title="Trending" param="fetchTrending" />
           <NavbarItem title="Top Rated" param="fetchTopRated" />

@@ -11,8 +11,8 @@ function Header() {
     <div className=" flex justify-between mx-2 max-w-6xl  sm:mx-auto items-center py-6">
       <div className="flex">
         <MenuItem title={"Home"} address={"/"} Icon={AiFillHome} />
-        <MenuItem title={"Movies"} address={"/movies"} Icon={FaFilm} />
-        <MenuItem title={"TvShows"} address={"/tvShows"} Icon={IoTvOutline} />
+        <MenuItem title={"Movies"} address={"/movie"} Icon={FaFilm} />
+        <MenuItem title={"TvShows"} address={"/tv"} Icon={IoTvOutline} />
         <MenuItem
           title={"About"}
           address={"/about"}

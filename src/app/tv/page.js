@@ -10,11 +10,11 @@ async function TvShows({ searchParams: { genre, page } }) {
   const data = await getShowsByType(genreParam, page);
   const { results, total_results } = data;
   const totalPages = Math.ceil(total_results / RESULTS_PER_PAGE);
-  const path = `/tvShows?genre=${genreParam}&page=`;
+  const path = `/tv?genre=${genreParam}&page=`;
 
   return (
     <div className="">
-      <Results results={results} type={"/tvShows/tvShow"} />
+      <Results results={results} type={"tv"} />
       <Pagination currentPage={page} totalPages={totalPages} path={path} />
     </div>
   );

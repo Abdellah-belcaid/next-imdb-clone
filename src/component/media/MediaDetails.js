@@ -1,4 +1,4 @@
-import { getMainActors, getReviews } from "@/services/TmdbMoviesAPI";
+import { getMainActors, getReviews } from "@/services/TmdbAPIUtils";
 import Credits from "./Credits";
 import Overview from "./Overview";
 import Reviews from "./Reviews";

@@ -1,22 +1,11 @@
 import Pagination from "@/component/Pagination";
 import Results from "@/component/media/Results";
-import { searchMovies } from "@/services/TmdbMoviesAPI";
-import { searchShows } from "@/services/TmdbTvShowsAPI";
+import { searchMedia } from "@/services/TmdbAPIUtils";
 
 const RESULTS_PER_PAGE = 20; // Adjust as needed
 
-async function getDataByType(type, searchTerm, page) {
-  if (type === "movies") {
-    return searchMovies(searchTerm, page);
-  } else if (type === "tvShows") {
-    return searchShows(searchTerm, page);
-  } else {
-    throw new Error("Invalid type");
-  }
-}
-
 async function SearchPage({ params, searchParams }) {
-  const data = await getDataByType(
+  const data = await searchMedia(
     searchParams.type,
     params.searchTerm,
     searchParams.page
@@ -24,7 +13,7 @@ async function SearchPage({ params, searchParams }) {
   const results = data.results;
   const totalPages = Math.ceil(data.total_results / RESULTS_PER_PAGE);
   const path = `/search/${params.searchTerm}?type=${searchParams.type}&page=`;
-
+      
   return (
     <div>
       {results && results.length === 0 && (
@@ -40,7 +29,7 @@ async function SearchPage({ params, searchParams }) {
 
       {results && (
         <div className="">
-          <Results results={results} />
+          <Results results={results} type={searchParams.type} />
           <Pagination
             currentPage={searchParams.page}
             totalPages={totalPages}

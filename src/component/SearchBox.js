@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function SearchBox() {
   const [search, setSearch] = useState("");
-  const [type, setType] = useState("movies");
+  const [type, setType] = useState("movie");
   const router = useRouter();
 
   function handleSearch(e) {
@@ -37,8 +37,8 @@ function SearchBox() {
           className="h-12  rounded-md bg-transparent text-gray-700 focus:outline-none focus:border-amber-400 dark:text-white"
           aria-label="Search type"
         >
-          <option value="movies">Movies</option>
-          <option value="tvShows">TV Shows</option>
+          <option value="movie">Movies</option>
+          <option value="tv">TV Shows</option>
         </select>
         <button
           type="submit"
