@@ -2,7 +2,7 @@ import ActorCard from "./ActorCard";
 
 function Credits({ actors }) {
   return (
-    <>
+    <div className="">
       <h2 className="text-3xl font-semibold inline-block border-b-2 border-blue-500 ml-6 mt-4">
         Main Actors
       </h2>
@@ -11,7 +11,7 @@ function Credits({ actors }) {
           <ActorCard key={actor.id} actor={actor} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
