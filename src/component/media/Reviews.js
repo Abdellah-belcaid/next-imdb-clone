@@ -1,16 +1,11 @@
-import { getReviews } from "@/services/TmdbMoviesAPI";
 import Image from "next/image";
 import { FaUser } from "react-icons/fa";
 
-async function Reviews({ id, type }) {
-  const reviewsData = await getReviews(type, id);
-  const reviews = reviewsData.results;
-
-  console.log(reviewsData);
+async function Reviews({ reviews }) {
   return (
     <div className="min-w-fit mt-6 mx-4">
       <div className="flex items-center mb-4">
-        <h2 className="text-3xl font-semibold inline-block border-b-2 border-blue-500 ml-6">
+        <h2 className="text-3xl font-semibold inline-block border-b-2 border-blue-500 ml-4">
           Reviews
         </h2>
         <div className="px-2 py-1 bg-blue-500 text-white rounded-full ml-2">

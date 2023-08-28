@@ -23,23 +23,28 @@ function Overview({ media }) {
   } = media;
 
   return (
-    <div
-      className="min-w-fit ml-2 mr-2 rounded-lg bg-transparent "
-      style={{
-        background: `url(https://image.tmdb.org/t/p/original/${poster_path}) center/cover`,
-      }}
-    >
-      <div className="text-white  p-6  md:pt-8 flex flex-col md:flex-row items-center content-center  mx-auto md:space-x-6 ">
+    <div className="min-w-fit ml-4 mr-4 rounded-xl relative bg-gradient-to-tr from-purple-900 via-blue-900 to-green-900">
+      <Image
+        className="object-cover bg-fixed absolute mix-blend-overlay w-full h-full opacity-50 rounded-xl"
+        src={`https://image.tmdb.org/t/p/original/${
+          backdrop_path || poster_path
+        }`}
+        width={900}
+        height={600}
+        alt="image is not available"
+        placeholder="blur"
+        blurDataURL="/spinner.svg"
+      />
+
+      <div className="text-white  p-6  md:pt-8 flex flex-col md:flex-row items-center content-center  mx-auto md:space-x-6  rounded-xl">
         <Image
-          src={`https://image.tmdb.org/t/p/original/${
-            backdrop_path || poster_path
-          }`}
-          width={500}
-          height={600}
+          src={`https://image.tmdb.org/t/p/original/${poster_path}`}
+          width={400}
+          height={650}
           alt="image is not available"
-          className=" rounded-lg  "
+          className="rounded-lg min-h-full "
           placeholder="blur"
-          blurDataURL="/icon.ico"
+          blurDataURL="/spinner.svg"
         />
         <div className="p-2 ">
           <h2 className="text-3xl mb-3 font-extrabold">{title || name}</h2>

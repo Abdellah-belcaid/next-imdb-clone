@@ -54,5 +54,15 @@ export async function searchMovies(query, page = 1) {
 
 export async function getReviews(mediaType, mediaId) {
   const endpoint = `https://api.themoviedb.org/3/${mediaType}/${mediaId}/reviews?api_key=${API_KEY}&language=en-US`;
-  return fetchData(endpoint);
+  const response = await fetchData(endpoint);
+  return response.results;
+}
+
+export async function getMainActors(mediaType, mediaId) {
+  const endpoint = `https://api.themoviedb.org/3/${mediaType}/${mediaId}/credits?api_key=${API_KEY}&language=en-US`;
+  const response = await fetchData(endpoint);
+
+  // Filter cast members to get only main actors (e.g., actors with prominent roles)
+  const mainActors = response.cast.filter((actor) => actor.order < 10); // You can adjust the order as needed
+  return mainActors;
 }
