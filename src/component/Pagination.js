@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function Pagination({ currentPage, totalPages, path }) {
+function Pagination({ currentPage = 1, totalPages, path }) {
   const page = parseInt(currentPage, 10);
 
   return (

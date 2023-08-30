@@ -18,17 +18,17 @@ const Card = ({ result, type = "movie" }) => {
   } = result;
 
   return (
-    <div className="cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200 group">
+    <div className=" cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border  sm:border-slate-400 sm:m-2 transition-shadow duration-200 group ">
       <Link href={`/${type}/${id}`}>
         <Image
           src={`https://image.tmdb.org/t/p/original/${
-            backdrop_path || poster_path
+            poster_path || backdrop_path
           }`}
           width={500}
           height={300}
           layout="responsive"
           alt="image is not available"
-          className="sm:rounded-t-lg group-hover:opacity-80 transition-opacity duration-200"
+          className="sm:rounded-t-lg group-hover:opacity-80 transition-opacity duration-200 h-52"
           placeholder="blur"
           blurDataURL="/spinner.svg"
         />
