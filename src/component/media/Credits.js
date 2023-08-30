@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../variants";
 import ActorCard from "./ActorCard";
 
 function Credits({ actors }) {
@@ -7,10 +10,18 @@ function Credits({ actors }) {
         Main Actors
       </h2>
       <div className="relative z-0 grid  auto-cols-[15rem] grid-flow-col gap-1 overflow-x-auto pt-2  overscroll-x-contain  no-scrollbar">
-        {actors.map((actor) => (
-          <div key={actor.id} className="  ">
+        {actors.map((actor, index) => (
+          <motion.div
+            variants={fadeIn("right", 0.2 * index)}
+            initial="hidden"
+            animate="show"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            key={actor.id}
+            className="max-h-fit "
+          >
             <ActorCard actor={actor} />
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

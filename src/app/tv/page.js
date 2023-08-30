@@ -2,7 +2,7 @@ import Pagination from "@/component/Pagination";
 import Results from "@/component/media/Results";
 import { getShowsByType } from "@/services/TmdbTvShowsAPI";
 
-const DEFAULT_GENRE = "fetchTrending"; // Adjust as needed
+const DEFAULT_GENRE = "trending"; // Adjust as needed
 const RESULTS_PER_PAGE = 20; // Adjust as needed
 
 async function TvShows({ searchParams: { genre, page } }) {

@@ -2,7 +2,8 @@ import Pagination from "@/component/Pagination";
 import Results from "@/component/media/Results";
 import { getMoviesByType } from "@/services/TmdbMoviesAPI";
 
-const DEFAULT_GENRE = "fetchTrending";
+
+const DEFAULT_GENRE = "trending";
 const RESULTS_PER_PAGE = 20; // Adjust as needed
 
 export default async function Home({ searchParams: { genre, page } }) {

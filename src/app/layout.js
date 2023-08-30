@@ -4,7 +4,8 @@ import NavBar from "@/component/NavBar";
 import SearchBox from "@/component/SearchBox";
 import { Inter } from "next/font/google";
 import Providers from "./Providers";
-import "./globals.css";
+
+import "../styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,6 @@ export default function RootLayout({ children }) {
     /*  add this to html or body tag "suppressHydrationWarning={true}" 
      if this error showed up : "Extra attributes from the server: data-new-gr-c-s-check-loaded" */
     <html lang="en">
-      
       <body className={inter.className}>
         <Providers>
           <Header />

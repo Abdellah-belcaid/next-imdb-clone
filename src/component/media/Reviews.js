@@ -41,7 +41,7 @@ function Reviews({ reviews }) {
             </button>
           </div>
 
-          <div className="p-4 bg-white shadow-md dark:bg-gray-800 rounded-md mb-20 ">
+          <div className="p-4 bg-gray-100 shadow-md dark:bg-gray-800 rounded-md mb-20 ">
             <div className="flex items-center mb-4">
               <div className="h-10 w-10 rounded-full bg-gray-300 relative">
                 {currentReview.author_details.avatar_path &&
