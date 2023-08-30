@@ -3,12 +3,12 @@ import { fetchData } from "./TmdbAPIUtils";
 const API_KEY = process.env.API_KEY;
 export async function getShowsByType(type, page = 1) {
   switch (type) {
-    case "fetchTrending":
+    case "trending":
       return getTrendingTVShows(page);
-    case "fetchTopRated":
+    case "top_rated":
       return getTopRatedTVShows(page);
-    case "fetchAiringToday":
-    case "fetchNowPlaying":
+    case "airing_today":
+    case "now_playing":
       return getAiringTodayTVShows(page);
     case "popular":
       return getPopularTVShows(page);
