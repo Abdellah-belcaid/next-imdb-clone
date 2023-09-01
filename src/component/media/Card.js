@@ -35,8 +35,7 @@ const Card = ({ result, type = "movie", index }) => {
               backdrop_path || poster_path
             }`}
             width={500}
-            height={300}
-            layout="responsive"
+            height={300}            
             alt="image is not available"
             className="sm:rounded-t-lg group-hover:opacity-80 transition-opacity duration-200 h-52"
             placeholder="blur"

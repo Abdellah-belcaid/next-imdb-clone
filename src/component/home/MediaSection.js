@@ -1,17 +1,18 @@
 "use client";
-import { FreeMode, Pagination, Navigation } from "swiper/modules";
+import { FreeMode, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ActorCard from "./ActorCard";
 
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
-function Credits({ actors }) {
+import Card from "../media/Card";
+
+function MediaSection({ media, title, type }) {
   return (
-    <div className="px-6 py-2">
-      <h2 className="text-3xl p-1 font-semibold inline-block border-b-4 border-blue-500 ml-2 mt-4 mb-4">
-        Main Actors
+    <div className="px-6 py-2 mb-4">
+      <h2 className="text-2xl p-1 font-semibold ml-2 mt-4 mb-4 capitalize">
+        {title} {type}s
       </h2>
       <Swiper
         slidesPerView="auto"
@@ -24,9 +25,12 @@ function Credits({ actors }) {
         modules={[FreeMode, Pagination, Navigation]}
         className="grid grid-cols-4 grid-flow-col gap-1 overflow-x-auto pt-2 overscroll-x-contain no-scrollbar"
       >
-        {actors.map((actor, index) => (
-          <SwiperSlide key={actor.id} className="min-h-[200px] max-w-[250px]">
-            <ActorCard actor={actor} index={index} />
+        {media.map((item, index) => (
+          <SwiperSlide
+            key={item.id}
+            className="min-h-[300px] max-w-[320px] mt-2 mb-2"
+          >
+            <Card key={item.id} result={item} type={type} index={index} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -34,4 +38,4 @@ function Credits({ actors }) {
   );
 }
 
-export default Credits;
+export default MediaSection;

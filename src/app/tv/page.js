@@ -1,4 +1,4 @@
-import Pagination from "@/component/Pagination";
+import Pagination from "@/component/UI/Pagination";
 import Results from "@/component/media/Results";
 import { getShowsByType } from "@/services/TmdbTvShowsAPI";
 

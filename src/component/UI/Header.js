@@ -4,7 +4,7 @@ import { BsFillInfoCircleFill } from "react-icons/bs";
 import { FaFilm } from "react-icons/fa";
 import { IoTvOutline } from "react-icons/io5";
 import DarkModeSwitch from "./DarkModeSwitch";
-import MenuItem from "./MenuItem";
+import MenuItem from "../MenuItem";
 
 function Header() {
   return (

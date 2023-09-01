@@ -1,5 +1,5 @@
-import Footer from "@/component/Footer";
-import Header from "@/component/Header";
+import Footer from "@/component/UI/Footer";
+import Header from "@/component/UI/Header";
 import NavBar from "@/component/NavBar";
 import SearchBox from "@/component/SearchBox";
 import { Inter } from "next/font/google";
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
           <Header />
           <NavBar />
           <SearchBox />
-          <Transition/>
+          <Transition />
           {children}
           <div id="bottom-trigger"></div> {/* Trigger for the footer */}
           <Footer />

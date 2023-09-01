@@ -1,4 +1,4 @@
-import Pagination from "@/component/Pagination";
+import Pagination from "@/component/UI/Pagination";
 import Results from "@/component/media/Results";
 import { searchMedia } from "@/services/TmdbAPIUtils";
 
@@ -13,7 +13,7 @@ async function SearchPage({ params, searchParams }) {
   const results = data.results;
   const totalPages = Math.ceil(data.total_results / RESULTS_PER_PAGE);
   const path = `/search/${params.searchTerm}?type=${searchParams.type}&page=`;
-      
+
   return (
     <div>
       {results && results.length === 0 && (

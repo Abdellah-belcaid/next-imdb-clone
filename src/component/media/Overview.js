@@ -49,7 +49,7 @@ function Overview({ media, trailers }) {
         />
         <div className="p-2 z-10">
           <h2 className="text-4xl mb-3 font-extrabold">
-            {title || name} ({release_date.substring(0, 4)})
+            {title || name} ({release_date ? release_date.substring(0, 4) : ""})
           </h2>
           {trailers.length !== 0 && (
             <Link

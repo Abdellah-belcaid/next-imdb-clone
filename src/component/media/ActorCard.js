@@ -20,8 +20,7 @@ const ActorCard = ({ actor, index }) => {
         <Image
           src={`https://image.tmdb.org/t/p/original/${profile_path}`}
           width={400}
-          height={200}
-          layout="responsive"
+          height={200}          
           alt={`${name} profile`}
           className="sm:rounded-t-lg group-hover:opacity-80 transition-opacity duration-200 object-contain"
           placeholder="blur"
