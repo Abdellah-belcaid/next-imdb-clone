@@ -32,3 +32,27 @@ export async function searchMedia(type, query, page = 1) {
   const endpoint = `https://api.themoviedb.org/3/search/${type}?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}`;
   return fetchData(endpoint);
 }
+
+export function getRandomBackdropPathFromResults(results) {
+  // Extracting backdrop_path values from results
+  const backdropPaths = results.map((show) => show.backdrop_path);
+
+  // Generating a random index for selecting a backdrop_path
+  const randomIndex = Math.floor(Math.random() * backdropPaths.length);
+
+  // Get the randomly selected backdrop_path
+  const randomBackdropPath = backdropPaths[randomIndex];
+
+  return randomBackdropPath;
+}
+
+export async function getVideos(mediaType, mediaId) {
+  const endpoint = `https://api.themoviedb.org/3/${mediaType}/${mediaId}/videos?api_key=${API_KEY}&language=en-US`;
+  const response = await fetchData(endpoint);
+  const trailers = response.results.filter((video) => video.type === "Trailer");
+  const otherVideos = response.results.filter(
+    (video) => video.type !== "Trailer"
+  );
+
+  return { trailers, otherVideos };
+}

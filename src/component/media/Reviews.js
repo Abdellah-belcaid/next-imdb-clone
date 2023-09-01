@@ -26,7 +26,7 @@ function Reviews({ reviews }) {
     <>
       {currentReview && (
         <div className="min-w-fit mt-6 mx-4">
-          <div className="flex items-center mb-4 justify-between">
+          <div className="flex items-center mb-4 justify-between ">
             <h2 className="text-3xl p-1 font-semibold inline-block border-b-2 border-blue-500 ml-2 mt-4">
               Reviews
               <span class="inline-flex items-center justify-center w-6 h-6 p-2 ml-2 text-xl font-semibold text-blue-800 bg-blue-200 rounded-full ">
@@ -34,7 +34,7 @@ function Reviews({ reviews }) {
               </span>
             </h2>
             <button
-              className="text-xl font-semibold hover:text-blue-500 mr-2"
+              className="text-xl font-semibold hover:text-blue-500 mr-2 mt-6"
               onClick={handleNextReview}
             >
               Next Review <FaArrowRight className="ml-1 inline" />

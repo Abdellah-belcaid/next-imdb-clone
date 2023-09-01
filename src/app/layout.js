@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import Providers from "./Providers";
 
 import "../styles/globals.css";
+import Transition from "@/component/UI/Transition";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
           <Header />
           <NavBar />
           <SearchBox />
+          <Transition/>
           {children}
           <div id="bottom-trigger"></div> {/* Trigger for the footer */}
           <Footer />

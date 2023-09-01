@@ -1,11 +1,21 @@
-const { default: Image } = require("next/image");
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import { RiUserLine } from "react-icons/ri";
+import { fadeIn } from "../../../variants";
 
-const ActorCard = ({ actor }) => {
+const ActorCard = ({ actor, index }) => {
   const { profile_path, name, character, id } = actor;
 
   return (
-    <div  className="cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200 group">
+    <motion.div
+      variants={fadeIn("right", 0.2 * index)}
+      initial="hidden"
+      animate="show"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      className="relative cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200 group"
+    >
       {profile_path ? (
         <Image
           src={`https://image.tmdb.org/t/p/original/${profile_path}`}
@@ -25,9 +35,9 @@ const ActorCard = ({ actor }) => {
 
       <div className="p-2">
         <h2 className="truncate font-bold">{name}</h2>
-        <p className="line-clamp-2 text-md">{character}</p>
+        <p className="line-clamp-1 text-sm ">{character}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default ActorCard;

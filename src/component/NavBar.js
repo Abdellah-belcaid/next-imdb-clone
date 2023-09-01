@@ -9,10 +9,10 @@ function NavBar() {
   return (
     <>
       {(segment === "tv" || segment === "movie" || segment === "") && (
-        <div className="flex justify-center dark:bg-gray-600 bg-gray-300 lg:text-2lg p-4  ">
+        <div className="text-white flex justify-center lg:text-2lg p-4  bg-gradient-to-tr from-purple-900  to-green-700 ">
           <NavbarItem title="Trending" param="trending" />
-          <NavbarItem title="Top Rated" param="top_rated" />
-          <NavbarItem title="Now Playing" param="now_playing" />
+          <NavbarItem title="TopRated" param="top_rated" />
+          <NavbarItem title="NowPlaying" param="now_playing" />
           <NavbarItem title="Popular" param="popular" />
         </div>
       )}
